@@ -1,0 +1,1 @@
+include ':app', ':module_information', ':lib-net', ':lib-core'

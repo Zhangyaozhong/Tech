@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+//android配置
+def config = rootProject.ext.android
+
+//相关库依赖
+def librarys = rootProject.ext.dependencies
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation librarys.supportV7
+    implementation librarys.constraint
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //    glidet图片加载框架
+    implementation librarys.glide
+    api librarys.retrofit_converter_scalars
+    implementation librarys.BaseRecyclerViewAdapterHelper
+    implementation librarys.SmartRefreshLayout
+    implementation librarys.SmartRefreshHeader
+    //没有使用特殊Header，可以不加这行
+    implementation librarys.suppoutDesign
+    //版本随意（非必须，引用可以解决无法预览问题）
+    //轮播
+    implementation librarys.xbanner
+    //工具类库
+    implementation librarys.utilcode
+    // Retrofit库
+    implementation librarys.retrofit
+    implementation librarys.converter_gson
+    //支持android
+    implementation librarys.rxandroid
+    //支持Rxjava
+    implementation librarys.adapter_rxjava2
+    //fresco
+    implementation librarys.fresco
+    //    ok日志拦截器拦截器
+    implementation librarys.logging_interceptor
+    //recyclerview的依赖
+    implementation librarys.recyclerview
+
+    //EnvetBus
+    implementation librarys.eventbus
+    //调试工具  chrome://inspect/#devices
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    //调试okhttp
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

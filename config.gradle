@@ -1,0 +1,70 @@
+ext {
+    //true 组件化模式
+    //false 集成模式
+    isModule = true
+    android = [compileSdkVersion: 28,
+               applicationId    : "com.wd.demo",
+               minSdkVersion    : 19,
+               targetSdkVersion : 28,
+               versionCode      : 101,
+               versionName      : "1.0.1"
+    ]
+
+    appId = ["app"               : "com.wd.demo",
+             "module_information": "com.wd.demo.module_information",
+//             "module-push"       : "com.example.kson.module_push",
+//             "module-im"         : "com.example.kson.module_im",
+//             "module-video"      : "com.example.kson.module_video",
+    ]
+    //Version
+    def dependVersion = [
+            supportLibrary               : "28.0.0",
+            multidex                     : "1.0.1",
+            arouterCompile               : "1.2.2",
+            arouter                      : "1.4.1",
+            retrofit                     : "2.5.0",
+            rxandroid                    : "2.1.1",
+            rxjava                       : "2.5.0",
+            converterGson                : "2.4.0",
+            fresco                       : "1.12.1",
+            okhttp                       : "3.9.0",
+            loggingInterceptor           : "3.12.1",
+            constraint                   : "1.1.3",
+            utilcode                     : "1.19.0",
+            BaseRecyclerViewAdapterHelper: "2.9.31",
+            glide                        : "4.8.0",
+            SmartRefreshLayout           : "1.0.5.1",
+            SmartRefreshHeader           : "1.0.5.1",
+            xbanner                      : "1.5.1",
+            recyclerview                 : "28.0.0",
+            eventbus                     : "3.1.1"
+
+    ]
+
+    // 创建一个 dependencies集合，存储的内容为 "key" : "value"
+    dependencies = [
+            supportV7                    : "com.android.support:appcompat-v7:${dependVersion.supportLibrary}",
+            supportV4                    : "com.android.support:support-v4:${dependVersion.supportLibrary}",
+            suppoutDesign                : "com.android.support:design:${dependVersion.supportLibrary}",
+            constraint                   : "com.android.support.constraint:constraint-layout:${dependVersion.constraint}",
+            //   路由
+            arouterCompile               : "com.alibaba:arouter-compiler:${dependVersion.arouterCompile}",
+            arouter                      : "com.alibaba:arouter-api:${dependVersion.arouter}",
+            glide                        : "com.github.bumptech.glide:glide:${dependVersion.glide}",
+            BaseRecyclerViewAdapterHelper: "com.github.CymChad:BaseRecyclerViewAdapterHelper:${dependVersion.BaseRecyclerViewAdapterHelper}",
+            SmartRefreshLayout           : "com.scwang.smartrefresh:SmartRefreshLayout:${dependVersion.SmartRefreshLayout}",
+            SmartRefreshHeader           : "com.scwang.smartrefresh:SmartRefreshHeader:${dependVersion.SmartRefreshHeader}",
+            xbanner                      : "com.xhb:xbanner:${dependVersion.xbanner}",
+            utilcode                     : "com.blankj:utilcode:${dependVersion.utilcode}",
+            retrofit                     : "com.squareup.retrofit2:retrofit:${dependVersion.retrofit}",
+            converter_gson               : "com.squareup.retrofit2:converter-gson:${dependVersion.converterGson}",
+            rxandroid                    : "io.reactivex.rxjava2:rxandroid:${dependVersion.rxandroid}",
+            adapter_rxjava2              : "com.squareup.retrofit2:adapter-rxjava2:${dependVersion.rxjava}",
+            fresco                       : "com.facebook.fresco:fresco:${dependVersion.fresco}",
+            logging_interceptor          : "com.squareup.okhttp3:logging-interceptor:${dependVersion.loggingInterceptor}",
+            recyclerview                 : "com.android.support:recyclerview-v7:${dependVersion.recyclerview}",
+            eventbus                     : "org.greenrobot:eventbus:${dependVersion.eventbus}",
+            retrofit_converter_scalars   : "com.squareup.retrofit2:converter-scalars:${dependVersion.retrofit}"
+    ]
+
+}

@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+//android配置
+def config = rootProject.ext.android
+
+//相关库依赖
+def librarys = rootProject.ext.dependencies
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation librarys.supportV7
+    implementation librarys.supportV4
+    implementation librarys.constraint
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //黄油刀
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation librarys.utilcode
+    implementation librarys.glide
+    implementation librarys.BaseRecyclerViewAdapterHelper
+    implementation librarys.SmartRefreshLayout
+    implementation librarys.SmartRefreshHeader
+    //recyclerview的依赖
+    implementation librarys.recyclerview
+    api librarys.arouter
+    api project(':lib-net')
+
+}
