@@ -12,7 +12,8 @@ ext {
 
     appId = ["app"               : "com.wd.demo",
              "module_information": "com.wd.demo.module_information",
-//             "module-push"       : "com.example.kson.module_push",
+             "module_message"       : "com.wd.demo.module_message",
+             "module_log_reg"       : "com.wd.demo.module_log_reg",
 //             "module-im"         : "com.example.kson.module_im",
 //             "module-video"      : "com.example.kson.module_video",
     ]

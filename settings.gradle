@@ -1,1 +1,1 @@
-include ':app', ':module_information', ':lib-net', ':lib-core'
+include ':app', ':module_information', ':lib-net', ':lib-core', ':module_message', ':module_log_reg'

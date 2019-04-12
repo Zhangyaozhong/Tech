@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$/lib-core" />
             <option value="$PROJECT_DIR$/lib-net" />
             <option value="$PROJECT_DIR$/module_information" />
+            <option value="$PROJECT_DIR$/module_log_reg" />
+            <option value="$PROJECT_DIR$/module_message" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
